@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.juego{
+    width: 60vw;
+    height: 15vh;
+    float: right;
+    display: flex;
+    background-color: antiquewhite;
+}
+
+.cerrar{
+    background-color: aqua;
+    width: 8%;
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.juego-contenedor{
+    width: 82%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+.titulojuego{
+    margin-bottom: 10%;
+}
+.contenedorjuego{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.nube{
+    padding: 10% 15%;
+    background-image: url("./media/nubes-juego.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.moneda{
+    width: 15%;
+}
+
+.moneda img{
+    width: 100%;
+}

@@ -1,0 +1,854 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Press Start 2P', cursive;
+    background: #75afef;
+    cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAgCAQAAACrvNDJAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjCBoIDjDlmXMsAAACsUlEQVQ4y9WVX2iNYRzHP++7s7PNTtlk0VhKEU3+zb8sDOVSLlBzgxA3jJILLuZClJSk/L1BLhZlpymSPyETCaXmT2vWLGfZHBt2drznvO/zdbF3x3HOwbjzvXqf3/N8nt/v+f5+9VpkK0AAC5FvrQzWFFgi1m/O8BYLMDhDhzIVYinzsIBAXk313OW4HIt/Gsl7AKKcZoCc2mS3LNYh7VSJyhSWZFSrUq3XIW1TcTc1uTGCJzaaN5IchTVbLZJcHVC1eiVFteQL+6miilBWqXneVG9SAIIsogADgMsISoARlBaPqSvaEjGJI3Z2Ti91XBk7hpB9sOR++frxxYdzgL9XkArqqAj+NQggxD+BwP8EBshPWxm8dAtyf/tg3oUQeYD4Fojf4qJSF9kU+QUFKfJjhanhDpSt3co4hKHZCk/NnxGvNn75IXYwFrBZwXT/gloqhsCR9mqmAYYFzK6k8hKF/lYRqwCwqEq9a1naG1OFzWQmsJDSYTlmx3nGSxKpwHwmYwGQ5AUDQA+tGKCN92km2ZFXuzp36UkO3/rYQwdwl6M4wCnC/vgD2O6sT2tuPticvJbeCb83fXiAw1cE9BNPz4jDc+17feNkwskALb/k7LWFhQ0kaLab8uPZxeZWlGY+a9BAo4FW98owwXbO9/c89J1X2+t757zksMAYsXfu9qGWPfbOt5rrf+4efdyhyyY+BIqWzsa9hPmRVRktEsIiysPP3Zf4kL4zhYZyt0GOBhVTgz5KeqXrSkq6rafq1gYzup3qTP8n0DgjeVa9PurKSPLkSpI8eerQnC52Myr7EQvsyxOjx/UrdWhhG8sh+9/xyNRHnEjtz3MeoROPcUwYHALlAuGN1d6jl2lTaWhSY9RNrChfR5SYH80Gbcdu5MFPbn400au866hvwiPiR78DbK1Vx/dOU7YAAAAldEVYdGRhdGU6Y3JlYXRlADIwMTktMDgtMzBUMTc6MTE6MTUtMDM6MDAaZ2sUAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE5LTA4LTI2VDExOjE0OjQ4LTAzOjAw0PYKMgAAAABJRU5ErkJggg==) 10 2,url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAgCAQAAACrvNDJAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjCBoIDjDlmXMsAAACsUlEQVQ4y9WVX2iNYRzHP++7s7PNTtlk0VhKEU3+zb8sDOVSLlBzgxA3jJILLuZClJSk/L1BLhZlpymSPyETCaXmT2vWLGfZHBt2drznvO/zdbF3x3HOwbjzvXqf3/N8nt/v+f5+9VpkK0AAC5FvrQzWFFgi1m/O8BYLMDhDhzIVYinzsIBAXk313OW4HIt/Gsl7AKKcZoCc2mS3LNYh7VSJyhSWZFSrUq3XIW1TcTc1uTGCJzaaN5IchTVbLZJcHVC1eiVFteQL+6miilBWqXneVG9SAIIsogADgMsISoARlBaPqSvaEjGJI3Z2Ti91XBk7hpB9sOR++frxxYdzgL9XkArqqAj+NQggxD+BwP8EBshPWxm8dAtyf/tg3oUQeYD4Fojf4qJSF9kU+QUFKfJjhanhDpSt3co4hKHZCk/NnxGvNn75IXYwFrBZwXT/gloqhsCR9mqmAYYFzK6k8hKF/lYRqwCwqEq9a1naG1OFzWQmsJDSYTlmx3nGSxKpwHwmYwGQ5AUDQA+tGKCN92km2ZFXuzp36UkO3/rYQwdwl6M4wCnC/vgD2O6sT2tuPticvJbeCb83fXiAw1cE9BNPz4jDc+17feNkwskALb/k7LWFhQ0kaLab8uPZxeZWlGY+a9BAo4FW98owwXbO9/c89J1X2+t757zksMAYsXfu9qGWPfbOt5rrf+4efdyhyyY+BIqWzsa9hPmRVRktEsIiysPP3Zf4kL4zhYZyt0GOBhVTgz5KeqXrSkq6rafq1gYzup3qTP8n0DgjeVa9PurKSPLkSpI8eerQnC52Myr7EQvsyxOjx/UrdWhhG8sh+9/xyNRHnEjtz3MeoROPcUwYHALlAuGN1d6jl2lTaWhSY9RNrChfR5SYH80Gbcdu5MFPbn400au866hvwiPiR78DbK1Vx/dOU7YAAAAldEVYdGRhdGU6Y3JlYXRlADIwMTktMDgtMzBUMTc6MTE6MTUtMDM6MDAaZ2sUAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE5LTA4LTI2VDExOjE0OjQ4LTAzOjAw0PYKMgAAAABJRU5ErkJggg==),auto;;;
+}
+body::-webkit-scrollbar{
+    width: 7px;
+}
+body::-webkit-scrollbar-thumb{
+    background: gray;
+}
+header{
+    width: 100%;
+    height: 500px;
+    background-image: url('../media/header.png');
+    background-repeat:no-repeat;
+    background-size: contain;
+}
+
+
+.menu{
+    background-color: rgba(255, 255, 255, .9);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transform: translate3d(0px,-100%,0px);
+    transition: transform .60s ease-in-out;
+    z-index: 2;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    background: white;
+    -webkit-transform: translate3d(0px,-100%,0px);
+    -moz-transform: translate3d(0px,-100%,0px);
+    -ms-transform: translate3d(0px,-100%,0px);
+    -o-transform: translate3d(0px,-100%,0px);
+}
+.abierto{
+    transform: translate3d(0,0,0);
+}
+.menu-hamburgesa{
+    width: 50px;
+    margin-top: 10px;
+    z-index: 3;
+}
+
+.links{
+    text-decoration: none;
+    color: black;
+    padding: 60px 0;
+    background: white;
+    font-size: 14px;
+    padding-left: 20px;
+    z-index: 2;
+}
+.links:hover{
+    background: #07FF3E;
+}
+.presentacion{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 80px;
+}
+.mounstro{
+    width: 40px;
+    position: relative;
+    z-index: 1;
+}
+.cuadrado{
+    width: 250px;
+    height: 40px;
+    background-color: #75afef;
+    position: absolute;
+    margin-bottom: 140px;
+    z-index: 0;
+}
+.cuadradouno{
+    right: 180px;
+}
+.cuadradodos{
+    left: 200px;
+}
+.mounstrouno{
+    left: 105px;
+}
+.mounstrodos{
+    right: 90px;
+}
+.nombre{
+    font-size: 13px;
+}
+.contenedor-profesion{
+    width: 100%;
+}
+.profesion{
+    font-size: 13px;
+    margin-top: 10px;
+    color: #07FF3E;
+}
+.computadora{
+    width: 100px;
+    margin-top: 20px;
+    opacity: 0;
+}
+.juego{
+    width: 40vw;
+    height: 10vh;
+    float: right;
+    display: flex;
+    background-color: white;
+}
+
+.juego p {
+    font-size: 6px;
+}
+
+.cerrar{
+    background-color: #07FF3E;
+    width: 8%;
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.juego-contenedor{
+    width: 82%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+.contenedor-juego{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nube-juego{
+    padding: 10% 15%;
+    background-image: url("../media/nubes-juego.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.nube-juego p {
+    opacity: 0;
+}
+
+.moneda{
+    width: 15%;
+}
+
+.moneda img{
+    width: 100%;
+}
+.contenedor-titulo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.titulo{
+    font-size: 10px;
+    color: white;
+}
+.imagen-titulo{
+    width: 70px;
+}
+.contenedor-nubes{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+.nube{
+    width: 250px;
+    height: 200px;
+    background-image: url(../media/nube.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.nube h3{
+    padding-top: 60px;
+    font-size: 10px;
+    opacity: 0;
+}
+
+.nubedos{
+    margin: 0 20px;
+}
+.especialidades{
+    width: 100%;
+}
+.contenedor-ladrillos{
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.ladrillo{
+    width: 100px;
+    height: 100px;
+    background-image: url('../media/ladrillo.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 30px 5px;
+}
+
+.piso{
+    width: 100%;
+    position: relative;
+}
+
+.piso img{
+    width: 100%;
+    margin-top: 50px;
+}
+
+.contenedor-ladrillo{
+    text-align: center;
+}
+.contenedor-ladrillo h3{
+    color: white;
+    font-style: italic;
+    font-size: 12px;
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+    opacity: 0;
+}
+.proyectos{
+    width: 100%;
+    margin-top: 15%;
+}
+.contenedor-proyectos{
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    margin: 0 auto;
+}
+.dos{
+    display: block;
+}
+.proyectoss{
+    width: 30vw;
+    height: 20vw;
+    background-image: url("../media/pregunta.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 0 3vw;
+}
+
+.mario{
+    width: 20%;
+    position: relative;
+    top: 54px;
+    right: 20px;
+}
+
+.mario img {
+    width: 100%;
+}
+
+.contenedor-mario-flechas{
+    display: flex;
+    justify-content: space-between;
+}
+
+.contenedor-flechas {
+    margin-top: 5%;
+    align-items: center;
+    position: relative;
+    left: 42%;
+    top: 30px;
+}
+.flechas-x {
+    display: flex;
+}
+
+.flechas-x img {
+    margin: 0 4%;
+}
+
+#arriba {
+    margin-left: 13%;
+}
+
+.tecla {
+    width: 10%;
+}
+
+
+
+@-webkit-keyframes animar {
+    
+    0% {
+        -webkit-transform: translate(0px, 0px);
+    }
+    10% {
+        -webkit-transform: translate(20px, 0px);
+    }
+    20% {
+        -webkit-transform: translate(0px, 0px);
+    }
+    30% {
+        -webkit-transform: translate(20px, 0px);
+    }
+    40% {
+        -webkit-transform: translate(0px, 0px);
+    }
+    50% {
+        -webkit-transform: translate(20px, 0px);
+    }
+    60% {
+        -webkit-transform: translate(0px, 0px);
+    }
+    70% {
+        -webkit-transform: translate(20px, 0px);
+    }
+    80% {
+        -webkit-transform: translate(0px, 0px);
+    }
+    90% {
+        -webkit-transform: translate(20px, 0px);
+    }
+    100% {
+        -webkit-transform: translate(0px, 0px);
+        visibility: none;
+    }
+}
+@media (min-width:400px){
+    .menu-hamburgesa{
+        width: 50px;
+        margin-top: 20px;
+    }
+    .titulo{
+        font-size: 12px;
+    }
+    .imagen-titulo{
+        width: 80px;
+    }
+    .ladrillo{
+        margin: 50px 20px;
+    }
+    .contenedor-flechas {
+        left: 35%;
+        top: 30px;
+    }
+}
+
+@media (min-width:500px){
+    .sobre-mi{
+        width: 100%;
+        height: 1100px;
+    }
+    .mario{
+        width: 100px;
+        right: 35px;
+    }
+    .proyecto{
+        width: 120px;
+        height: 120px;
+    }
+    .contenedor-flechas {
+        left: 25%;
+        top: 30px;
+    }
+
+    .juego p {
+        font-size: 8px;
+    }
+
+}
+
+@media (min-width:700px){
+    .menu-hamburgesa{
+        width: 60px;
+        margin-top: 30px;
+    }
+    .nombre{
+        font-size: 18px;
+    }
+    .profesion{
+        font-size: 13px;
+    }
+    .cuadradouno{
+        right: 340px;
+    }
+    .cuadradodos{
+        left: 370px;
+    }
+    .mounstrouno{
+        left: 145px;
+    }
+    .mounstrodos{
+        right: 130px;
+    }
+    .adivinar{
+        width: 22%;
+        height: 14%;
+    }
+    .cerrar-adivinar{
+        line-height: 125px;
+    }
+    .contenedor-titulo{
+        margin-left: 50px;
+    }
+    .titulo{
+        font-size: 14px;
+    }
+    .imagen-titulo{
+        width: 90px;
+    }
+    .sobre-mi{
+        width: 100%;
+        height: 900px;
+    }
+    .ladrillo{
+        width: 125px;
+        height: 125px;
+        margin: 50px 50px;
+    }
+
+    .contenedor-ladrillo h3{
+        font-size: 14px;
+    }
+
+    .mario{
+        width: 140px;
+    }
+    .proyecto{
+        width: 160px;
+        height: 160px;
+    }
+
+    .contenedor-flechas {
+        left: 15%;
+        top: 30px;
+    }
+
+    .juego{
+        width: 35vw;
+        height: 15vh;
+    }
+    .juego p {
+        font-size: 9px;
+    }
+
+}
+
+@media (min-width:900px){
+    .menu-hamburgesa{
+        width: 70px;
+        margin-top: 40px;
+    }
+    .nombre{
+        font-size: 22px;
+    }
+    .profesion{
+        font-size: 17px;
+    }
+    .computadora{
+        width: 110px;
+    }
+    .cuadrado{
+        width: 300px;
+        margin-bottom: 155px;
+    }
+    .cuadradouno{
+        right: 430px;
+    }
+    .cuadradodos{
+        left: 470px;
+    }
+    .adivinar{
+        width: 20%;
+        height: 12%;
+    }
+    .resultadouno{
+        right: 105px;
+        margin-top: 18px;
+    }
+    .resultadodos{
+        right: 60px;
+        margin-top: 18px;
+    }
+    .cerrar-adivinar{
+        line-height: 115px;
+    }
+    .titulo{
+        font-size: 16px;
+    }
+    .imagen-titulo{
+        width: 100px;
+    }
+    .ladrillo{
+        width: 135px;
+        height: 135px;
+    }
+    .contenedor-ladrillo h3{
+        font-size: 16px;
+    }
+    .mario{
+        width: 160px;
+    }
+    .proyecto{
+        width: 180px;
+        height: 180px;
+    }
+    .tecla {
+        width: 15%;
+    }
+    .contenedor-flechas {
+        left: 5%;
+        top: 30px;
+    }
+    #arriba {
+        margin-left: 15%;
+    }
+    .juego{
+        width: 30vw;
+        height: 15vh;
+    }
+    .juego p {
+        font-size: 10px;
+    }
+}
+
+@media (min-width:1200px){
+    .menu-hamburgesa{
+        width: 80px;
+        margin-top: 55px;
+    }
+    .nombre{
+        font-size: 26px;
+    }
+    .profesion{
+        font-size: 21px;
+    }
+    .presentacion{
+        margin-top: 120px;
+    }
+    .mounstro{
+        width: 60px;
+    }
+    .computadora{
+        width: 125px;
+    }
+    .cuadrado{
+        width: 400px;
+        height: 60px;
+        margin-bottom: 200px;
+    }
+    .cuadradouno{
+        right: 580px;
+    }
+    .cuadradodos{
+        left: 625px;
+    }
+    .adivinar{
+        width: 16%;
+        height: 12%;
+    }
+    .juego-nube{
+        width: 60px;
+    }
+    .juego-moneda{
+        width: 30px;
+    }
+    .adivinar-cerrar{
+        width: 20%;
+    }
+    .titulo{
+        font-size: 18px;
+    }
+    .imagen-titulo{
+        width: 110px;
+    }
+    .nube{
+        width: 350px;
+        height: 200px;
+    }
+    .nube h3{
+        padding: 60px;
+        font-size: 12px;
+    }
+    .ladrillo{
+        width: 150px;
+        height: 150px;
+    }
+    .piso img{
+        width: 100%;
+        margin-top: 120px;
+    }
+    .contenedor-ladrillo h3{
+        font-size: 18px;
+    }
+    .mario{
+        width: 180px;
+        top: 130px;
+    }
+    .proyecto{
+        width: 200px;
+        height: 200px;
+    }
+    .contenedor-proyectos{
+        margin-top: 150px;
+    }
+    .tecla {
+        width: 20%;
+    }
+    #arriba {
+        margin-left: 17%;
+    }
+    .juego{
+        width: 30vw;
+        height: 15vh;
+    }
+    .contenedor-juego {
+        width: 100%;
+    }
+    header {
+        height: 800px;
+    }
+}
+
+@media (min-width:1500px){
+    .menu-hamburgesa{
+        width: 90px;
+        margin-top: 70px;
+    }
+    .nombre{
+        font-size: 28px;
+    }
+    .profesion{
+        font-size: 23px;
+    }
+    .presentacion{
+        margin: 160px;
+    }
+    .mounstro{
+        width: 70px;
+    }
+    .computadora{
+        width: 150px;
+    }
+    .cuadradouno{
+        right: 730px;
+    }
+    .cuadradodos{
+        left: 780px;
+    }
+    .adivinar{
+        width: 14%;
+        height: 12%;
+        margin-top: -75px;
+    }
+    .adivinar-juego{
+        font-size: 9px;
+    }
+    .resultadouno{
+        right: 120px;
+        margin-top: 18px;
+    }
+    .resultadodos{
+        right: 75px;
+        margin-top: 20px;
+    }
+    header{
+        height: 1000px;
+    }
+    .titulo{
+        font-size: 20px;
+    }
+    .imagen-titulo{
+        width: 120px;
+    }
+    .nube{
+        width: 450px;
+        height: 300px;
+    }
+    .nube h3{
+        padding: 60px;
+        padding-top: 100px;
+        font-size: 14px;
+    }
+    .ladrillo{
+        width: 165px;
+        height: 165px;
+    }
+    .contenedor-ladrillo h3{
+        font-size: 20px;
+    }
+    .mario{
+        width: 200px;
+    }
+    .proyecto{
+        width: 220px;
+        height: 220px;
+    }
+
+    .tecla {
+        width: 25%;
+    }
+
+    .contenedor-flechas {
+        left: 0%;
+        top: 30px;
+    }
+    #arriba {
+        margin-left: 19%;
+    }
+    .juego p {
+        font-size: 10px;
+    }
+}
+@media (min-width:1700px){
+    header{
+        background-repeat: repeat;
+    }
+    .adivinar{
+        width: 12%;
+        height: 14%;
+    }
+    .cerrar-adivinar{
+        line-height: 135px;
+    }
+    .adivinar-cerrar{
+        width: 22%;
+    }
+    header{
+        height: 900px;
+    }
+    .sobre-mi{
+        margin-top: 150px;
+    }
+    .ladrillo{
+        width: 200px;
+        height: 200px;
+    }
+    .piso img{
+        width: 100%;
+        margin-top: 200px;
+    }
+    .contenedor-ladrillo h3{
+        font-size: 21px;
+    }
+    .mario{
+        width: 220px;
+        top: 210px;
+    }
+    .proyecto{
+        width: 240px;
+        height: 240px;
+    }
+    .juego{
+        width: 25vw;
+        height: 20vh;
+    }
+    .juego p {
+        font-size: 15px;
+    }
+}
+@media (min-width:1800px){
+    .menu-hamburgesa{
+        margin-top: 85px;
+    }
+    .nombre{
+        font-size: 35px;
+    }
+    .profesion{
+        font-size: 30px;
+    }
+    .mounstro{
+        width: 80px;
+    }
+    .computadora{
+        width: 200px;
+        margin-top: 35px;
+    }
+    .cuadrado{
+        margin-bottom: 280px;
+    }
+    .cuadradouno{
+        right: 880px;
+    }
+    .cuadradodos{
+        left: 960px;
+    }
+    .mounstrouno{
+        left: 300px;
+    }
+    .mounstrodos{
+        right: 230px;
+    }
+    .adivinar{
+        width: 16%;
+        height: 16%;
+        margin-top: -100px;
+    }
+    .adivinar-cerrar{
+        width: 15%;
+    }
+    .cerrar-adivinar{
+        margin-left: 5px;
+        line-height: 150px;
+    }
+    .resultadouno{
+        right: 130px;
+    }
+    .resultadodos{
+        right: 85px;
+    }
+    .titulo{
+        font-size: 22px;
+    }
+    .imagen-titulo{
+        width: 130px;
+    }
+    .nube{
+        width: 550px;
+    }
+
+    .nube h3{
+        padding-top: 130px;
+        font-size: 20px;
+    }
+    .contenedor-ladrillo h3{
+        font-size: 22px;
+    }
+    .mario{
+        width: 240px;
+    }
+    .proyecto{
+        width: 300px;
+        height: 300px;
+    }
+}
