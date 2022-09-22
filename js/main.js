@@ -132,7 +132,7 @@ $(document).ready(()=>{
             mostrarObjeto('¡Has tomado el Martillo!','#07FF3E')
         }
     })
-    const contenedorLadrillos=['(../media/html.png)','(../media/css.png)','(../media/js.png)','(../media/react.png)','(../media/jquery.png)','(../media/wordpress.png)','(../media/boostrap.png)','(../media/sass.png)','(../media/git.png)','(../media/mk.png)']
+    const contenedorLadrillos=['("https://i.imgur.com/UY4aZIT.png")','("https://i.imgur.com/z6fqbTw.png")','("https://i.imgur.com/ZL6o0tI.png")','("https://i.imgur.com/qz39pNk.png")','("https://i.imgur.com/UG5gJWJ.png")','("https://i.imgur.com/IYGbZgG.png")','("https://i.imgur.com/4CPKGF5.png")','("https://i.imgur.com/yr8lkTm.png")','("https://i.imgur.com/ACwTWU5.png")','("https://i.imgur.com/DCbAFW1.png")']
     $('.contenedor-ladrillos').click((e)=>{
         const imagenLadrillo=$(e.target).attr('data-index')
         const parrafoLadrillo=$(e.target).attr('data-imagen')
@@ -186,12 +186,12 @@ $(document).ready(()=>{
 
     const moverMario = (movimiento) => {
 
-        $('#mario').attr('src','../media/mario.gif')
+        $('#mario').attr('src','https://i.imgur.com/CimxGy3.gif')
         $('.mario').animate({
         right:movimiento+4*screen.width/100
         })
         setTimeout(() => {
-            $('#mario').attr('src','../media/marioparado.png')
+            $('#mario').attr('src','https://i.imgur.com/Yg2kdb5.png')
         }, 300);
 
     }
@@ -241,11 +241,11 @@ $(document).ready(()=>{
         $('.mario').animate({
             top:'0px'
         },300,()=>{
-            $('#mario').attr('src','../media/mariosaltando.png')
+            $('#mario').attr('src','https://i.imgur.com/PUmFvCV.png')
             $('.mario').animate({
                 top : saltoDistancia
             },500,()=>{
-                $('#mario').attr('src','../media/marioparado.png')
+                $('#mario').attr('src','https://i.imgur.com/Yg2kdb5.png')
             })
         })
     })
@@ -289,11 +289,11 @@ $(document).ready(()=>{
                 $('.mario').animate({
                     top:'0px'
                 },300,()=>{
-                    $('#mario').attr('src','../media/mariosaltando.png')
+                    $('#mario').attr('src','https://i.imgur.com/PUmFvCV.png')
                     $('.mario').animate({
                         top : saltoDistancia
                     },500,()=>{
-                        $('#mario').attr('src','../media/marioparado.png')
+                        $('#mario').attr('src','https://i.imgur.com/Yg2kdb5.png')
                     })
                 })
             
