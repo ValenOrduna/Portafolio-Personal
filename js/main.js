@@ -147,10 +147,16 @@ $(document).ready(()=>{
                 $('#'+parrafoLadrillo).animate({
                     opacity:'1'
                 },1000)
+                const estrellas=$('.contenedor-estrellas')[imagenLadrillo]
+                $(estrellas).animate({
+                    opacity : '1'
+                },1300)
             }, 1500);
+        }else if(e.target.id==='ladrillo'&& martillo===false){
+            mostrarObjeto('¡No has recogido el martillo!','#FF2424')
         }
     })
-
+    
     $('.proyecto').click((e)=>{
         $('#mario').animate({
             left:'+'+screen.width*$(e.target).attr('data-valor')/14
@@ -229,9 +235,9 @@ $(document).ready(()=>{
         saltoMario()
         if(valoraDescubrir>-1){
             if($(proyecto).hasClass('abierto')){
-                mostrarObjeto('¡Ya descubriste este trabajo!','#FF2424')
+                mostrarObjeto('¡Ya descubriste este proyecto!','#FF2424')
             }else {
-                mostrarObjeto('¡Has descubierto un trabajo!','#07FF3E')
+                mostrarObjeto('¡Has descubierto un proyecto!','#07FF3E')
                 $(proyecto).addClass('abierto')
             }
         }else{

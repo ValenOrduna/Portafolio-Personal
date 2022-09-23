@@ -305,6 +305,20 @@ header{
     width: 10%;
 }
 
+.contenedor-estrellas {
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+}
+
+.estrella {
+    width: 18px;
+}
+
+.opacidad {
+    opacity: 0.35;
+}
+
 
 
 @-webkit-keyframes animar {
@@ -362,6 +376,9 @@ header{
         left: 35%;
         top: 30px;
     }
+    .estrella {
+        width: 20px;
+    }
 }
 
 @media (min-width:500px){
@@ -384,6 +401,10 @@ header{
 
     .juego p {
         font-size: 8px;
+    }
+
+    .estrella {
+        width: 24px;
     }
 
 }
@@ -462,6 +483,7 @@ header{
         font-size: 9px;
     }
 
+
 }
 
 @media (min-width:900px){
@@ -539,6 +561,9 @@ header{
     }
     .juego p {
         font-size: 10px;
+    }
+    .estrella {
+        width: 28px;
     }
 }
 
@@ -638,6 +663,9 @@ header{
     header {
         height: 800px;
     }
+    .estrella {
+        width: 32px;
+    }
 }
 
 @media (min-width:1500px){
@@ -729,6 +757,9 @@ header{
     .juego p {
         font-size: 10px;
     }
+    .estrella {
+        width: 34px;
+    }
 }
 @media (min-width:1700px){
     header{
@@ -775,6 +806,9 @@ header{
     }
     .juego p {
         font-size: 15px;
+    }
+    .estrella {
+        width: 36px;
     }
 }
 @media (min-width:1800px){
@@ -850,5 +884,8 @@ header{
     .proyecto{
         width: 300px;
         height: 300px;
+    }
+    .estrella {
+        width: 38px;
     }
 }
