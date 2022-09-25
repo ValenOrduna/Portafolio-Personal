@@ -30,7 +30,7 @@ header{
     top: 0;
     width: 100%;
     height: 100%;
-    transform: translate3d(0px,-100%,0px);
+    transform: translate3d(0px,-150%,0px);
     transition: transform .60s ease-in-out;
     z-index: 2;
     display: flex;
@@ -38,10 +38,10 @@ header{
     flex-direction: column;
     justify-content: center;
     background: white;
-    -webkit-transform: translate3d(0px,-100%,0px);
-    -moz-transform: translate3d(0px,-100%,0px);
-    -ms-transform: translate3d(0px,-100%,0px);
-    -o-transform: translate3d(0px,-100%,0px);
+    -webkit-transform: translate3d(0px,-150%,0px);
+    -moz-transform: translate3d(0px,-150%,0px);
+    -ms-transform: translate3d(0px,-150%,0px);
+    -o-transform: translate3d(0px,-150%,0px);
 }
 .abierto{
     transform: translate3d(0,0,0);
@@ -254,9 +254,6 @@ header{
     width: 80%;
     margin: 0 auto;
 }
-.dos{
-    display: block;
-}
 .proyectoss{
     width: 30vw;
     height: 20vw;
@@ -265,44 +262,15 @@ header{
     background-size: contain;
     margin: 0 3vw;
 }
-
-.mario{
-    width: 20%;
-    position: relative;
-    top: 54px;
-    right: 20px;
-}
-
-.mario img {
+.dos {
     width: 100%;
 }
-
-.contenedor-mario-flechas{
-    display: flex;
-    justify-content: space-between;
+.mario {
+    width: 16%;
 }
 
-.contenedor-flechas {
-    margin-top: 5%;
-    align-items: center;
-    position: relative;
-    left: 42%;
-    top: 30px;
-}
-.flechas-x {
-    display: flex;
-}
-
-.flechas-x img {
-    margin: 0 4%;
-}
-
-#arriba {
-    margin-left: 13%;
-}
-
-.tecla {
-    width: 10%;
+.pisodos {
+    width: 100%;
 }
 
 .contenedor-estrellas {
@@ -319,7 +287,21 @@ header{
     opacity: 0.35;
 }
 
+.contenedor-teclas {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10%;
+}
 
+.contenedor-flechas img {
+    width: 40px;
+}
+
+.tecla {
+    width: 30px;
+    height: 30px;
+    margin: 0 2%;
+}
 
 @-webkit-keyframes animar {
     
@@ -358,6 +340,11 @@ header{
         visibility: none;
     }
 }
+@media (min-width:375px){
+    .contenedor-flechas{
+        margin-top: 0px;
+    }
+}
 @media (min-width:400px){
     .menu-hamburgesa{
         width: 50px;
@@ -386,10 +373,6 @@ header{
         width: 100%;
         height: 1100px;
     }
-    .mario{
-        width: 100px;
-        right: 35px;
-    }
     .proyecto{
         width: 120px;
         height: 120px;
@@ -405,6 +388,10 @@ header{
 
     .estrella {
         width: 24px;
+    }
+    .tecla {
+        width: 40px;
+        height: 40px;
     }
 
 }
@@ -461,18 +448,9 @@ header{
     .contenedor-ladrillo h3{
         font-size: 14px;
     }
-
-    .mario{
-        width: 140px;
-    }
     .proyecto{
         width: 160px;
         height: 160px;
-    }
-
-    .contenedor-flechas {
-        left: 15%;
-        top: 30px;
     }
 
     .juego{
@@ -483,6 +461,10 @@ header{
         font-size: 9px;
     }
 
+    .tecla {
+        width: 50px;
+        height: 50px;
+    }
 
 }
 
@@ -538,22 +520,9 @@ header{
     .contenedor-ladrillo h3{
         font-size: 16px;
     }
-    .mario{
-        width: 160px;
-    }
     .proyecto{
         width: 180px;
         height: 180px;
-    }
-    .tecla {
-        width: 15%;
-    }
-    .contenedor-flechas {
-        left: 5%;
-        top: 30px;
-    }
-    #arriba {
-        margin-left: 15%;
     }
     .juego{
         width: 30vw;
@@ -564,6 +533,11 @@ header{
     }
     .estrella {
         width: 28px;
+    }
+    .tecla {
+        width: 50px;
+        height: 50px;
+        margin: 0 1%;
     }
 }
 
@@ -636,22 +610,12 @@ header{
     .contenedor-ladrillo h3{
         font-size: 18px;
     }
-    .mario{
-        width: 180px;
-        top: 130px;
-    }
     .proyecto{
         width: 200px;
         height: 200px;
     }
     .contenedor-proyectos{
         margin-top: 150px;
-    }
-    .tecla {
-        width: 20%;
-    }
-    #arriba {
-        margin-left: 17%;
     }
     .juego{
         width: 30vw;
@@ -665,6 +629,11 @@ header{
     }
     .estrella {
         width: 32px;
+    }
+    .tecla {
+        width: 60px;
+        height: 60px;
+        margin: 0 1%;
     }
 }
 
@@ -735,30 +704,20 @@ header{
     .contenedor-ladrillo h3{
         font-size: 20px;
     }
-    .mario{
-        width: 200px;
-    }
     .proyecto{
         width: 220px;
         height: 220px;
-    }
-
-    .tecla {
-        width: 25%;
-    }
-
-    .contenedor-flechas {
-        left: 0%;
-        top: 30px;
-    }
-    #arriba {
-        margin-left: 19%;
     }
     .juego p {
         font-size: 10px;
     }
     .estrella {
         width: 34px;
+    }
+    .tecla {
+        width: 80px;
+        height: 80px;
+        margin: 0 1%;
     }
 }
 @media (min-width:1700px){
@@ -792,10 +751,6 @@ header{
     .contenedor-ladrillo h3{
         font-size: 21px;
     }
-    .mario{
-        width: 220px;
-        top: 210px;
-    }
     .proyecto{
         width: 240px;
         height: 240px;
@@ -809,6 +764,11 @@ header{
     }
     .estrella {
         width: 36px;
+    }
+    .tecla {
+        width: 90px;
+        height: 90px;
+        margin: 0 1%;
     }
 }
 @media (min-width:1800px){
@@ -878,14 +838,16 @@ header{
     .contenedor-ladrillo h3{
         font-size: 22px;
     }
-    .mario{
-        width: 240px;
-    }
     .proyecto{
         width: 300px;
         height: 300px;
     }
     .estrella {
         width: 38px;
+    }
+    .tecla {
+        width: 90px;
+        height: 90px;
+        margin: 0 1%;
     }
 }

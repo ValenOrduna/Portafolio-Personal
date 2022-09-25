@@ -42,9 +42,10 @@ $(document).ready(()=>{
     const distanciadiv=$('.juego').width()
     const distanciacerra=$('.cerrar').width()
     $('#cerrar').click(()=>{
+
         if(!$('#cerrar').hasClass('cerrado')){
             $('#cerrar').addClass('cerrado')
-            cerrar('28px',''+distanciacerra+'px','none')
+            cerrar('20px',''+distanciacerra+'px','none')
         }else{
             $('#cerrar').removeClass('cerrado')
             cerrar(''+distanciadiv+'px',''+distanciacerra+'px','flex')
@@ -176,47 +177,43 @@ $(document).ready(()=>{
     const comprobarPosicion= (posicionMario)=>{
         valoraDescubrir=-1
         proyecto=''
-        if(mover>=3&&mover<=7){
+        if(mover>=2&&mover<=6){
             valoraDescubrir=0
             proyecto='#proyectouno'
+            console.log('estamos en primera posicion')
         }
-        if(mover>=10&&mover<=14){
+        if(mover>=9&&mover<13){
             valoraDescubrir=1
             proyecto='#proyectodos'
+            console.log('estamos en segunda posicion')
         }
-        if(mover>=16&&mover<=20){
+        if(mover>15&&mover<=19){
             valoraDescubrir=2
             proyecto='#proyectotres'
+            console.log('estamos en tercera posicion')
         }
     }
 
     const moverMario = (movimiento) => {
 
-        $('#mario').attr('src','https://i.imgur.com/CimxGy3.gif')
-        $('.mario').animate({
-        right:movimiento+4*screen.width/100
-        })
+        $('#mario').attr('src','../media/mario.gif')
+        $('.mario').css({marginLeft:movimiento+4*screen.width/100})
         setTimeout(() => {
-            $('#mario').attr('src','https://i.imgur.com/Yg2kdb5.png')
+            $('#mario').attr('src','../media/marioparado.png')
         }, 300);
 
     }
 
     const saltoMario = () =>{
-        if(screen.width>=1700){
-            saltoDistancia=210
-        }else if (screen.width<1700 && screen.width>=1200){
-            saltoDistancia=130
-        }else{
-            saltoDistancia=55
-        }
+        const pantalla=parseInt(screen.width/100*16)
+        console.log(pantalla)
+        saltoDistancia=pantalla
     }
 
     $('#derecha').click(()=>{
         if(mover<=20){
-
             mover+=1
-            moverMario('-=')
+            moverMario('+=')
             
         }
     })
@@ -225,7 +222,7 @@ $(document).ready(()=>{
         if(mover > 0){
 
             mover-=1
-            moverMario('+=')
+            moverMario('-=')
             
         }
     })
@@ -244,36 +241,41 @@ $(document).ready(()=>{
             mostrarObjeto('¿Así saltas? ¡Ponle más ganas!','#FF2424')
         }
         $('#salto-mario').html('<audio src="/sonidosalto3.mp3" autoplay></audio>')
+        $('.mario').css({
+            position:'relative'
+        })
         $('.mario').animate({
-            top:'0px'
+            bottom:saltoDistancia
         },300,()=>{
-            $('#mario').attr('src','https://i.imgur.com/PUmFvCV.png')
+            $('.mario').attr('src','../media/mariosaltando.png')
             $('.mario').animate({
-                top : saltoDistancia
+                bottom:'0px'
             },500,()=>{
-                $('#mario').attr('src','https://i.imgur.com/Yg2kdb5.png')
+                $('.mario').attr('src','../media/marioparado.png')
+                $('.mario').css({
+                    position:'none'
+                })
             })
         })
     })
 
     document.addEventListener("keydown", function(event) {
-
         if(permiso===true){
-            if (event.key == "ArrowRight"){
+            if (event.key === "d"||event.key==='D'){
                 
                 if(mover<=20){
 
                     mover+=1
-                    moverMario('-=')
+                    moverMario('+=')
                     
                 }
                 
-            }else if (event.key == "ArrowLeft"){
+            }else if (event.key === "a"||event.key==='A'){
 
                 if(mover > 0){
 
                     mover-=1
-                    moverMario('+=')
+                    moverMario('-=')
                     
                 }
             
@@ -292,14 +294,17 @@ $(document).ready(()=>{
                     mostrarObjeto('¿Así saltas? ¡Ponle más ganas!','#FF2424')
                 }
                 $('#salto-mario').html('<audio src="/sonidosalto3.mp3" autoplay></audio>')
+                $('.mario').css({
+                    position:'relative'
+                })
                 $('.mario').animate({
-                    top:'0px'
+                    bottom:saltoDistancia
                 },300,()=>{
-                    $('#mario').attr('src','https://i.imgur.com/PUmFvCV.png')
+                    $('.mario').attr('src','../media/mariosaltando.png')
                     $('.mario').animate({
-                        top : saltoDistancia
+                        bottom : '0px'
                     },500,()=>{
-                        $('#mario').attr('src','https://i.imgur.com/Yg2kdb5.png')
+                        $('.mario').attr('src','../media/marioparado.png')
                     })
                 })
             
